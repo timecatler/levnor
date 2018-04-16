@@ -1,0 +1,71 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 52b0d9ac0a976de71b5344562e77483aa3e74240cb7cf75165009745ab86fe86
+
+name:           levnor
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/timecatler/levnor#readme>
+homepage:       https://github.com/timecatler/levnor#readme
+bug-reports:    https://github.com/timecatler/levnor/issues
+author:         Tim Catler
+maintainer:     timecatler@gmail.com
+copyright:      GNU GPLv3
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/timecatler/levnor
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      JuicyPixels
+    , base >=4.7 && <5
+    , flow
+    , statistics
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_levnor
+  default-language: Haskell2010
+
+executable levnor-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      JuicyPixels
+    , base >=4.7 && <5
+    , flow
+    , levnor
+    , statistics
+  other-modules:
+      Paths_levnor
+  default-language: Haskell2010
+
+test-suite levnor-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      JuicyPixels
+    , base >=4.7 && <5
+    , flow
+    , levnor
+    , statistics
+  other-modules:
+      Paths_levnor
+  default-language: Haskell2010
